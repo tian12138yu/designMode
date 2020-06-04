@@ -11,7 +11,46 @@ import java.util.List;
 
  class test1 {
 
+     static class People{
+         int age;
+         String name;
+
+         public People(int age, String name) {
+             this.age = age;
+             this.name = name;
+         }
+
+         public int getAge() {
+             return age;
+         }
+
+         public void setAge(int age) {
+             this.age = age;
+         }
+
+         public String getName() {
+             return name;
+         }
+
+         public void setName(String name) {
+             this.name = name;
+         }
+     }
     public static void main(String[] args) {
+        /**
+         * Arrays.copyof方法是一个浅克隆；
+         */
+        People[] o1 = {new People(1,"java")};
+        People[] o2 = Arrays.copyOf(o1,o1.length);
+         o1[0].setName("111");
+
+        System.out.println(o1[0].getName());
+        System.out.println(o2[0].getName());
+
+
+    }
+
+    public static void main1(String[] args) {
 //        int count = 0;
 //        for (int i = 1; i <= 100; i++) {
 //            //99
